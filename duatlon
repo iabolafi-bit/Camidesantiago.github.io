@@ -1,0 +1,1934 @@
+
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camí Duathlon 2026 - Trail & BTT Challenge</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for High-End Classic & Modern Look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        lightBg: '#dbeafe', // Lighter blue sport-ice background
+                        lightCard: '#ffffff', // Crisp white cards
+                        lightBorder: '#dbeafe', // Soft electric blue border
+                        accentYellow: '#f59e0b', // Highly vibrant solar gold for Trail/highlights
+                        accentYellowHover: '#d97706', // Deep amber yellow
+                        accentBlue: '#2563eb', // Electric royal blue
+                        accentBlueHover: '#1d4ed8', // Deep royal blue
+                        accentCyan: '#0ea5e9', // Bright Cyan indicator
+                        textDark: '#1e3a8a', // Deep blue high-contrast text
+                        textMuted: '#475569', // Readability secondary text (slate)
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar matching clean and bright blue sports theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #cbd5e1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1d4ed8;
+        }
+
+        /* Carousel transition helpers */
+        .carousel-transition {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-tr from-blue-200 via-yellow-100 to-yellow-50 text-textMuted font-sans selection:bg-accentYellow selection:text-white min-h-screen flex flex-col antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-blue-200/80 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-accentBlue flex items-center justify-center shadow-lg shadow-accentBlue/20 group-hover:scale-105 transition-transform">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-serif text-lg sm:text-xl tracking-wider font-black block text-textDark">CAMÍ DUATHLON</span>
+                    <span class="text-[9px] tracking-widest font-extrabold uppercase text-accentYellow block -mt-1">TRAIL & BTT CHALLENGE 2026</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-bold tracking-wide">
+                <a href="#circuits" class="text-textDark hover:text-accentYellow transition-colors">Circuits i Altimetria</a>
+                <a href="#preparacio" class="text-textDark hover:text-accentYellow transition-colors">Requisits i Entrenament</a>
+                <a href="#mapas" class="text-textDark hover:text-accentYellow transition-colors">Mapas</a>
+                <a href="#sorteigs" class="text-textDark hover:text-accentYellow transition-colors">Sorteigs</a>
+                <a href="#calculadora" class="text-textDark hover:text-accentYellow transition-colors">Calculadora</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <a href="#calculadora" class="bg-accentYellow hover:bg-accentYellowHover text-white font-extrabold text-sm px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-yellow-300/40 hover:shadow-yellow-300/60 text-center uppercase tracking-wide">
+                    Inscriure'm
+                </a>
+               
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" aria-label="Obrir menú" aria-controls="mobileMenu" aria-expanded="false" class="md:hidden text-textDark hover:text-accentBlue focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white/95 border-b border-blue-200 px-6 py-4 space-y-4 shadow-lg">
+            <a href="#circuits" class="block text-textDark hover:text-accentYellow transition-colors py-2 font-bold">Circuits i Altimetria</a>
+            <a href="#preparacio" class="block text-textDark hover:text-accentYellow transition-colors py-2 font-bold">Requisits i Entrenament</a>
+            <a href="#mapas" class="block text-textDark hover:text-accentYellow transition-colors py-2 font-bold">Mapas</a>
+            <a href="#sorteigs" class="block text-textDark hover:text-accentYellow transition-colors py-2 font-bold">Sorteigs</a>
+            <a href="#calculadora" class="block text-textDark hover:text-accentYellow transition-colors py-2 font-bold">Calculadora i Preus</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-cover bg-center group" style="background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.06)), url('catedral.png'); filter: saturate(0.95) contrast(1.05);">
+        <!-- Energetic color accents (semi-transparent blur rings) -->
+        <div class="absolute inset-0 opacity-30 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-blue-400 rounded-full filter blur-[140px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-slate-900/10 rounded-full filter blur-[120px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-black/5"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative max-w-5xl mx-auto text-center z-10 py-8">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-accentYellow/10 border border-accentYellow/30 px-4 py-1.5 rounded-full text-[11px] font-bold text-accentYellow uppercase tracking-widest mb-8">
+                <i class="fa-solid fa-person-running text-lg animate-bounce"></i>
+                <i class="fa-solid fa-bicycle text-lg"></i>
+                <span>Duatló Oficial d'Alta Muntanya</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold text-textDark tracking-tight leading-[1.1] mb-8 transition-all duration-500 group-hover:tracking-[0.04em]">
+                L'ESSÈNCIA DEL CAMÍ,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentYellow via-orange-400 to-accentBlue block mt-2 transition-all duration-500 group-hover:scale-105">
+                    EN UN SOL REPTE.
+                </span>
+            </h1>
+
+            <!-- Description -->
+            <p class="max-w-2xl mx-auto text-textDark text-base sm:text-lg md:text-xl font-medium leading-relaxed mb-12 drop-shadow-sm">
+                Viu la fusió definitiva del <strong class="text-accentBlue">Trail Running</strong> i la <strong class="text-accentBlue">BTT/Gravel</strong> travessant els paratges mil·lenaris del Camí de Santiago. Selecciona la teva ruta històrica, configura la teva assistència i posa't a prova en un format d'elit internacional.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#circuits" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accentYellow hover:bg-accentYellowHover text-white font-extrabold text-base px-8 py-4 rounded-full transition-all duration-500 shadow-xl shadow-yellow-300/20 hover:shadow-yellow-300/40 hover:-translate-y-1">
+                    <i class="fa-solid fa-compass"></i>
+                    Explora els Circuits
+                </a>
+                <a href="#calculadora" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border border-yellow-200 text-textDark font-bold text-base px-8 py-4 rounded-full transition-all duration-300 shadow-md">
+                    <i class="fa-solid fa-calculator text-accentCyan"></i>
+                    Simulador de Pressupost
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="py-20 border-t border-blue-200/60 relative bg-gradient-to-br from-yellow-100/70 via-yellow-50/50 to-blue-200/50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="text-[11px] font-extrabold tracking-widest text-accentBlue uppercase block mb-3">L'ALQUÍMIA MULTIDISCIPLINAR</span>
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-textDark leading-tight mb-6">
+                UN FORMAT MODERN PER A UN<br class="hidden sm:inline"> TRAÇAT LLEGENDARI
+            </h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-accentBlue to-accentCyan mx-auto mb-8 rounded-full"></div>
+            <p class="text-textDark text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-semibold">
+                Combina la resistència de la carrera a peu de muntanya (<em class="text-accentBlue font-bold not-italic">Trail Running</em>) amb la velocitat de la bicicleta de muntanya o grava (<em class="text-accentBlue font-bold not-italic">BTT/Gravel</em>). Hem integrat tota la informació de les rutes, els perfils d'elevació interactius amb els seus avituallaments i l'itinerari diari en un sol espai.
+            </p>
+        </div>
+    </section>
+
+    <!-- CIRCUIT SELECTION & ALTIMETRY -->
+    <section id="circuits" class="py-24 relative border-t border-yellow-200/60 bg-yellow-100/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           
+            <div class="text-center mb-16">
+                <span class="text-accentYellow font-serif text-xl block mb-2 uppercase tracking-widest font-black">1. SELECCIONA LA TEVA RUTA I EXPLORA EL PERFIL</span>
+                <p class="text-textDark text-sm font-bold">Tria una ruta, selecciona el dia de l'etapa i passa el ratolí pel gràfic per analitzar el pendent real i els trams</p>
+            </div>
+
+            <!-- Unified Route Panel with All Information and Navigation Arrows -->
+            <div class="max-w-7xl mx-auto relative">
+                <!-- Left Arrow -->
+                <button onclick="switchRoutePrev()" aria-label="Ruta anterior" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-8 w-14 h-14 rounded-full bg-accentYellow text-white shadow-lg hover:bg-accentYellowHover transition-colors z-10">
+                    <i class="fa-solid fa-chevron-left text-2xl"></i>
+                </button>
+
+                <!-- Right Arrow -->
+                <button onclick="switchRouteNext()" aria-label="Següent ruta" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-8 w-14 h-14 rounded-full bg-accentYellow text-white shadow-lg hover:bg-accentYellowHover transition-colors z-10">
+                    <i class="fa-solid fa-chevron-right text-2xl"></i>
+                </button>
+
+                <!-- Main Panel with Route Info + Chart -->
+                <div class="bg-white/90 backdrop-blur-md border-2 border-blue-200/85 rounded-3xl shadow-xl overflow-hidden">
+                    <!-- Route Header Section -->
+                    <div id="route-carousel-card" class="relative overflow-hidden bg-cover bg-center border-b-2 border-blue-200/60 p-6 transition-all duration-500" style="background-image: linear-gradient(to bottom, rgba(239, 246, 255, 0.92), rgba(219, 234, 254, 0.98)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80');">
+                        <div class="absolute inset-0 bg-accentYellow/10 transition-colors"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-3">
+                                <div id="route-carousel-icon" class="w-12 h-12 rounded-xl bg-accentYellow flex items-center justify-center text-white font-black text-lg shadow-md">
+                                    <i class="fa-solid fa-flag"></i>
+                                </div>
+                                <div>
+                                    <span id="route-carousel-badge" class="text-[10px] text-accentYellow uppercase tracking-widest font-extrabold">RUTA DELS TEMPLERS</span>
+                                    <h4 id="route-carousel-title" class="text-xl font-bold text-textDark">Camí Francès</h4>
+                                </div>
+                            </div>
+                            <p id="route-carousel-desc" class="text-sm text-textMuted leading-relaxed font-semibold">Sarria a Santiago de Compostela. Paisatges de bosc de conte de fates i valls de gran valor històric.</p>
+                            <div class="flex items-center justify-between mt-3 pt-3 border-t border-blue-200 text-xs font-bold text-textDark">
+                                <span id="route-carousel-stages">4 Etapes</span>
+                                <span id="route-carousel-distance" class="text-accentBlue font-mono">115 km total</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Grid (Info + Chart) -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 items-stretch">
+               
+                        <!-- Info Column (Left) -->
+                        <div class="lg:col-span-4 bg-white/80 backdrop-blur-md flex flex-col justify-between">
+                    <div>
+                        <!-- Badge dynamic -->
+                        <div class="inline-block bg-accentYellow/10 text-accentYellow border border-accentYellow/20 text-[10px] uppercase tracking-widest font-extrabold px-3 py-1 rounded-full mb-4" id="route-badge">
+                            MÍTICA RUTA DELS TEMPLERS
+                        </div>
+                       
+                        <!-- Route Title Dynamic -->
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-textDark mb-4 leading-tight uppercase" id="route-title">
+                            CAMÍ FRANCÈS (SARRIA - SANTIAGO)
+                        </h3>
+                       
+                        <!-- Route Description Dynamic -->
+                        <p class="text-textMuted text-sm sm:text-base leading-relaxed mb-6 font-semibold" id="route-desc">
+                            La secció més èpica del Camí Francès. Sortirem des de Sarria superant crestes boscoses a peu, abans de muntar a la bicicleta per creuar les extenses valls de Portomarín i Melide fins a arribar a la icònica Plaza de l'Obradoiro.
+                        </p>
+
+                        <!-- Dynamic Technical Specifications Block -->
+                        <div class="bg-blue-50/70 p-5 rounded-xl border border-blue-200 space-y-3 mb-6 shadow-sm">
+                            <h4 class="text-xs font-bold text-textDark uppercase tracking-wider border-b border-blue-200 pb-2">Fitxa Tècnica i Traçat</h4>
+                            <div class="text-xs space-y-2">
+                                <p class="flex justify-between"><span class="text-textMuted font-bold">Inici - Final:</span> <span class="font-bold text-textDark" id="tech-endpoints">Sarria - Santiago</span></p>
+                                <p class="flex justify-between"><span class="text-textMuted font-bold">Exigència Física:</span> <span class="font-black text-accentBlue" id="tech-difficulty">Mitjana</span></p>
+                                <p class="flex justify-between"><span class="text-textMuted font-bold">Tipus Terreny:</span> <span class="font-bold text-textDark" id="tech-terrain">Pistes, senders i camins de terra</span></p>
+                                <p class="flex justify-between"><span class="text-textMuted font-bold">Bambes Trail:</span> <span class="font-bold text-textMuted" id="tech-shoes">Sola taquejat mitjà</span></p>
+                                <p class="flex justify-between"><span class="text-textMuted font-bold">Pneumàtic BTT:</span> <span class="font-bold text-textMuted" id="tech-tires">Gravel/MTB mixt 2.1"</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Distances specs -->
+                    <div class="border-t border-blue-200 pt-6 space-y-4">
+                        <div class="flex items-center justify-between text-sm sm:text-base">
+                            <span class="text-textDark font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-person-running text-accentYellow text-lg"></i> Distància Trail (A Peu)
+                            </span>
+                            <span class="font-extrabold text-textDark font-mono" id="route-dist-trail">35 km</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm sm:text-base">
+                            <span class="text-textDark font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-bicycle text-accentBlue text-lg"></i> Distància BTT / Gravel
+                            </span>
+                            <span class="font-extrabold text-textDark font-mono" id="route-dist-btt">80 km</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm sm:text-base">
+                            <span class="text-textDark font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-days text-accentBlue text-lg"></i> Durada de la Cursa
+                            </span>
+                            <span class="font-extrabold text-textDark font-mono" id="route-stages">4 Etapes (4 Nits)</span>
+                        </div>
+                    </div>
+                </div>
+
+                        <!-- Interactive Chart Column (Right) -->
+                        <div class="lg:col-span-8 bg-white/90 backdrop-blur-md flex flex-col justify-between">
+                    <div>
+                        <!-- Tabs & Title Header -->
+                        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 mb-6">
+                            <div>
+                                <h4 class="font-serif text-lg sm:text-xl font-black text-textDark flex items-center gap-2">
+                                    <i class="fa-solid fa-chart-area text-accentBlue"></i> PERFIL REAL PER ETAPES DIÀRIES
+                                </h4>
+                                <p class="text-textMuted text-xs mt-1 font-bold">Cada etapa comença amb Trail i acaba amb BTT/Gravel (Codi de colors)</p>
+                            </div>
+                           
+                            <!-- Day Selection Tabs -->
+                            <div class="flex flex-wrap gap-2" id="day-tabs-container">
+                                <!-- Tabs dynamically injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Legend Indicator of color coding -->
+                        <div class="flex flex-wrap items-center gap-4 mb-4 bg-blue-50/85 p-3 rounded-lg border border-blue-200 text-xs">
+                            <span class="font-bold text-textDark uppercase tracking-wider">Llegenda:</span>
+                            <span class="flex items-center gap-2 text-amber-600 font-black">
+                                <span class="w-3.5 h-3.5 rounded-sm bg-accentYellow border border-amber-600 block"></span>
+                                Trail Running (A Peu)
+                            </span>
+                            <span class="flex items-center gap-2 text-accentBlue font-black">
+                                <span class="w-3.5 h-3.5 rounded-sm bg-accentBlue border border-blue-800 block"></span>
+                                BTT / Gravel
+                            </span>
+                            <span class="text-accentBlue font-mono ml-auto hidden sm:inline">LIVE PLOTTER</span>
+                        </div>
+
+                        <!-- CONTENEDOR DEL GRÁFICO -->
+                        <div class="relative w-full bg-blue-50/50 rounded-xl border-2 border-blue-200 p-1 mt-2 overflow-hidden select-none shadow-inner" id="canvas-container">
+
+                            <!-- CANVAS -->
+                            <canvas id="elevationCanvas" class="w-full block" style="height:350px;"></canvas>
+
+                            <!-- TOOLTIP -->
+                            <div id="chart-tooltip" class="absolute bg-slate-900 text-white p-3.5 rounded-xl text-xs shadow-2xl backdrop-blur-md min-w-[210px] opacity-0 pointer-events-none transition-opacity duration-150 z-20">
+                                <p class="font-black text-sm mb-1.5 flex items-center justify-between">
+                                    <span id="tooltip-title">Detall del Punt</span>
+                                    <span id="tooltip-type" class="uppercase text-[9px] px-1.5 py-0.5 rounded font-black bg-yellow-400 text-black">Trail</span>
+                                </p>
+                                <div class="space-y-1 text-slate-300">
+                                    <p class="flex justify-between">
+                                        <span>Distància:</span>
+                                        <strong class="text-white font-mono" id="tooltip-km">-- km</strong>
+                                    </p>
+                                    <p class="flex justify-between">
+                                        <span>Altitud:</span>
+                                        <strong class="text-white font-mono" id="tooltip-alt">-- m</strong>
+                                    </p>
+                                    <p class="flex justify-between">
+                                        <span>Pendent:</span>
+                                        <strong class="font-mono text-yellow-400" id="tooltip-slope">-- %</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Active Info Bar -->
+                    <div id="active-station-detail" class="mt-4 bg-blue-50/80 p-4 rounded-xl border border-blue-200 flex items-center gap-4 transition-all duration-300">
+                        <div class="w-10 h-10 rounded-full bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue" id="station-icon">
+                            <i class="fa-solid fa-flag-checkered text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-accentBlue uppercase tracking-wider font-extrabold" id="station-sub">DADES ETAPA ACTIVA</p>
+                            <h5 class="text-sm font-bold text-textDark" id="station-name">Etapa 1: Sarria - Portomarín (22.0 KM)</h5>
+                            <p class="text-xs text-textMuted mt-0.5 font-semibold" id="station-desc">Dibuix d'altimetria real obtingut mitjançant dades geogràfiques reals de relleu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUISITS I PREPARACIÓ FÍSICA SECTION (REVOLUTIONARY SPINNER WHEEL) -->
+    <section id="preparacio" class="py-24 bg-yellow-100/60 border-t border-yellow-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-accentYellow font-serif text-lg block mb-2 uppercase tracking-wide font-extrabold">2. PREPARACIÓ DE LA RUTA</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-black text-textDark leading-tight uppercase mb-6">
+                    REQUISITS I ENTRENAMENT
+                </h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-accentYellow to-amber-400 mx-auto rounded-full"></div>
+                <p class="text-textDark mt-6 max-w-2xl mx-auto text-sm sm:text-base font-bold">
+                    Selecciona una única ruta i utilitza les fletxes laterals per avançar al següent camí. Només veuràs una ruta activa alhora, amb tots els requisits específics.
+                </p>
+            </div>
+
+            <!-- Carousel Interface - Single Card Layout -->
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Navigation Arrows -->
+                <button onclick="spinWheelPrev()" aria-label="Ruta anterior" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-6 w-14 h-14 rounded-full bg-accentYellow text-white shadow-lg hover:bg-accentYellowHover transition-colors z-10">
+                    <i class="fa-solid fa-chevron-left text-2xl"></i>
+                </button>
+                <button onclick="spinWheelNext()" aria-label="Següent ruta" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-6 w-14 h-14 rounded-full bg-accentYellow text-white shadow-lg hover:bg-accentYellowHover transition-colors z-10">
+                    <i class="fa-solid fa-chevron-right text-2xl"></i>
+                </button>
+
+                <!-- Single Unified Card -->
+                <div class="bg-white/90 border-2 border-yellow-200 rounded-3xl p-8 sm:p-12 shadow-xl" id="preparacio-card-container">
+                    <!-- Route Header with Icon -->
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-yellow-200">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accentYellow/10 text-accentYellow shadow-sm">
+                            <i class="fa-solid fa-route text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-3xl font-black text-textDark" id="carousel-route-title">Camí Francès</h3>
+                            <p class="text-sm text-textMuted font-semibold mt-1" id="carousel-route-desc">La secció més èpica del Camí Francès. Sortirem des de Sarria superant crestes boscoses a peu, abans de muntar a la bicicleta per creuar les extenses valls de Portomarín i Melide fins a arribar a la icònica Plaza de l'Obradoiro.</p>
+                        </div>
+                    </div>
+
+                    <!-- Route Quick Stats -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="rounded-2xl bg-yellow-50 p-4 border border-yellow-200">
+                            <span class="block text-[10px] uppercase tracking-widest text-yellow-600 font-bold">Etapes</span>
+                            <span id="carousel-route-stages" class="block text-textDark text-2xl font-black mt-1">4</span>
+                        </div>
+                        <div class="rounded-2xl bg-yellow-50 p-4 border border-yellow-200">
+                            <span class="block text-[10px] uppercase tracking-widest text-yellow-600 font-bold">Preu base</span>
+                            <span id="carousel-route-price" class="block text-textDark text-2xl font-black mt-1">120 €</span>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Requirements Content -->
+                    <div id="carousel-active-content" class="transition-all duration-500 transform translate-x-0 opacity-100">
+                        <!-- Dynamic route content gets injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SORTEIGS SECTION -->
+    <section id="sorteigs" class="py-24 relative bg-cover bg-center bg-fixed border-t border-b border-blue-200" style="background-image: linear-gradient(to bottom, rgba(255, 249, 196, 0.94), rgba(254, 243, 199, 0.92)), url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1920&q=80');">
+       
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+           
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl sm:text-5xl font-black text-textDark leading-tight uppercase">
+                    GRAN SORTEIG PER A DUATLETES
+                </h2>
+                <p class="text-textDark text-sm sm:text-base mt-3 max-w-2xl mx-auto font-extrabold">
+                    Per a tots els inscrits de manera gratuïta i l'opció de l'extra Premium de només <strong class="text-accentBlue font-extrabold">10 €</strong> per optar a la gran BTT de competició.
+                </p>
+            </div>
+
+            <!-- Two Elegant Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
+               
+                <!-- Card 1: Sorteig de Benvinguda (Left) -->
+                <div class="lg:col-span-6 bg-white/90 backdrop-blur-md border-2 border-blue-200 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <span class="inline-block bg-accentBlue/10 text-accentBlue border border-accentBlue/20 text-[10px] uppercase font-black px-3 py-1 rounded mb-4">
+                            INCLÒS GRATUÏTAMENT
+                        </span>
+                       
+                        <h3 class="font-serif text-2xl sm:text-3xl font-black text-textDark mb-2 leading-tight">
+                            SORTEIG OFICIAL DE BENVINGUDA
+                        </h3>
+                        <p class="text-xs text-textMuted mb-8 font-bold">S'activa immediatament al formalitzar la teva inscripció bàsica.</p>
+
+                        <!-- Products Row/Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                            <!-- Product 1 -->
+                            <div class="bg-blue-50/50 rounded-xl border border-blue-200 overflow-hidden flex flex-col justify-between group hover:border-accentBlue/40 transition-all duration-300 shadow-sm">
+                                <div class="h-28 w-full bg-cover bg-center" style="background-image: url('CASCO.png');"></div>
+                                <div class="p-4 text-center">
+                                    <span class="text-[8px] uppercase font-black text-accentBlue block mb-1">CICLISME</span>
+                                    <h4 class="text-xs font-bold text-textDark group-hover:text-accentBlue transition-colors">Casco Giro MTB</h4>
+                                    <p class="text-[10px] text-textMuted mt-2 font-bold">Seguretat MIPS i ventilació professional.</p>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="bg-blue-50/50 rounded-xl border border-blue-200 overflow-hidden flex flex-col justify-between group hover:border-accentBlue/40 transition-all duration-300 shadow-sm">
+                                <div class="h-28 w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&w=400&q=80');"></div>
+                                <div class="p-4 text-center">
+                                    <span class="text-[8px] uppercase font-black text-accentBlue block mb-1">RUNNING</span>
+                                    <h4 class="text-xs font-bold text-textDark group-hover:text-accentBlue transition-colors">Portamòbils Kiprun</h4>
+                                    <p class="text-[10px] text-textMuted mt-2 font-bold">Ajustable, impermeable i completament tàctil.</p>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="bg-blue-50/50 rounded-xl border border-blue-200 overflow-hidden flex flex-col justify-between group hover:border-accentBlue/40 transition-all duration-300 shadow-sm">
+                                <div class="h-28 w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80');"></div>
+                                <div class="p-4 text-center">
+                                    <span class="text-[8px] uppercase font-black text-accentBlue block mb-1">RUNNING</span>
+                                    <h4 class="text-xs font-bold text-textDark group-hover:text-accentBlue transition-colors">Bambes Trail Elite</h4>
+                                    <p class="text-[10px] text-textMuted mt-2 font-bold">Màxima adherència i sola de Carboni actiu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-blue-200 pt-4 text-center">
+                        <p class="text-xs text-textMuted font-bold">Tots els corredors entren en el sorteig de forma automàtica.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Star Sorteig (Right) -->
+                <div class="lg:col-span-6 bg-white/95 backdrop-blur-md border-2 border-accentBlue rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+                   
+                    <!-- Premium Diagonal Golden Ribbon -->
+                    <div class="absolute top-6 -right-16 bg-accentBlue text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-16 rotate-45 text-center shadow-lg z-20">
+                        Patrocini Orbea
+                    </div>
+
+                    <div>
+                        <span class="inline-block bg-accentBlue/10 text-accentBlue border border-accentBlue/20 text-[10px] uppercase font-black px-3 py-1 rounded mb-4">
+                            SORTEIG EXCLUSIU ORBEA
+                        </span>
+                       
+                        <h3 class="font-serif text-2xl sm:text-3xl font-black text-textDark mb-4 leading-tight">
+                            GUANYA UNA ORBEA ALMA DE CARBONI
+                        </h3>
+                       
+                        <div class="flex flex-col sm:flex-row gap-4 items-center mb-6">
+                            <div class="w-full sm:w-2/5 h-32 rounded-xl bg-cover bg-center border border-blue-200 shadow-sm bg-white" style="background-image: url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80');"></div>
+                            <p class="w-full sm:w-3/5 text-xs text-textMuted leading-relaxed font-bold">
+                                Gràcies al suport del nostre patrocinador oficial, <strong>Orbea</strong>, sortegem una <strong>Orbea Alma Carbon M-Pro</strong> (Valorada en 2.900 €). Amb només 10 € addicionals a la teva inscripció, opta a emportar-te una de les bicicletes de competició de muntanya de més èxit del mercat.
+                            </p>
+                        </div>
+
+                        <!-- Key Bullet specs with checkmarks -->
+                        <ul class="space-y-3.5 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-textMuted font-bold">
+                                <span class="w-5 h-5 rounded-full bg-accentBlue/15 flex items-center justify-center text-accentBlue text-xs">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                                Quadre Orbea de Carboni OMR de competició
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-textMuted font-bold">
+                                <span class="w-5 h-5 rounded-full bg-accentBlue/15 flex items-center justify-center text-accentBlue text-xs">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                                Transmissió d'alta precisió Shimano XT 1×12
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-textMuted font-bold">
+                                <span class="w-5 h-5 rounded-full bg-accentBlue/15 flex items-center justify-center text-accentBlue text-xs">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                                Forquilla Fox 32 Float Performance
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA to add raffle ticket -->
+                    <div class="border-t border-blue-200 pt-6">
+                        <button onclick="scrollToBudgetAndSelectRaffle()" class="w-full py-3.5 bg-gradient-to-r from-accentYellow to-amber-500 hover:from-amber-500 hover:to-yellow-600 text-white font-extrabold rounded-xl text-sm uppercase tracking-wide transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-yellow-300/20 hover:shadow-yellow-300/40">
+                            <i class="fa-solid fa-ticket"></i> Afegir Premium Orbea al Pressupost
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DYNAMIC BUDGET CALCULATOR SECTION -->
+    <section id="calculadora" class="py-24 relative bg-blue-100/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl sm:text-5xl font-black text-textDark leading-tight uppercase">
+                    SIMULADOR DE PRESSUPOST
+                </h2>
+                <p class="text-textDark text-sm sm:text-base mt-2 font-bold">Dissenya la teva experiència a mida del camí i calcula els preus al detall</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+               
+                <!-- Left panel: Selection Controls (7 columns) -->
+                <div class="lg:col-span-7 bg-white/90 backdrop-blur-md border-2 border-blue-200 p-6 sm:p-8 rounded-2xl space-y-8 shadow-sm">
+                   
+                    <!-- Selection 1: Route Select Dropdown -->
+                    <div>
+                        <label class="block text-[11px] font-extrabold uppercase tracking-wider text-textDark mb-3">
+                            RUTA DE LA DUATLÓ SELECCIONADA
+                        </label>
+                        <div class="relative">
+                            <select id="sim-route" onchange="syncAndCalculate()" class="w-full bg-blue-50/50 border-2 border-blue-200 rounded-xl px-4 py-4 text-sm font-bold text-textDark focus:outline-none focus:border-accentBlue appearance-none cursor-pointer shadow-sm">
+                                <option value="frances">Camí Francès (Sarria - Santiago) — 120 €</option>
+                                <option value="nord">Camí del Nord (Ribadesella - Gijón) — 140 €</option>
+                                <option value="portugues">Camí Portuguès (Tui - Santiago) — 110 €</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-textMuted">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selection 2: Accommodation Selection -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="block text-[11px] font-extrabold uppercase tracking-wider text-textDark">
+                                ALLOTJAMENT OFICIAL PER NIT DE CAMÍ
+                            </label>
+                            <span class="text-xs font-extrabold text-white bg-accentBlue px-2.5 py-0.5 rounded-full" id="sim-nights-badge">
+                                4 Nits
+                            </span>
+                        </div>
+                        <p class="text-xs text-textMuted mb-4 font-bold">La durada de l'allotjament s'ajusta automàticament a les etapes de la ruta triada.</p>
+                       
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <!-- Option A: None -->
+                            <div onclick="selectAccommodation('cap')" id="acc-cap" class="acc-card border-2 border-accentBlue bg-blue-50/50 p-4 rounded-xl cursor-pointer hover:border-accentBlue transition-all duration-300 relative shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="w-4 h-4 rounded-full border-2 border-accentBlue flex items-center justify-center p-0.5" id="acc-cap-ring">
+                                        <div class="w-full h-full rounded-full bg-accentBlue" id="acc-cap-dot"></div>
+                                    </div>
+                                    <span class="text-[9px] font-black text-accentBlue uppercase">CAP</span>
+                                </div>
+                                <h4 class="text-xs sm:text-sm font-black text-textDark">Sense allotjament</h4>
+                                <p class="text-xs text-textMuted font-bold mt-1">0 € / nit</p>
+                            </div>
+
+                            <!-- Option B: Hostels -->
+                            <div onclick="selectAccommodation('alberg')" id="acc-alberg" class="acc-card border-2 border-blue-200 bg-blue-50/30 p-4 rounded-xl cursor-pointer hover:border-accentBlue transition-all duration-300 relative shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="w-4 h-4 rounded-full border-2 border-blue-200 flex items-center justify-center p-0.5" id="acc-alberg-ring">
+                                        <div class="w-full h-full rounded-full bg-transparent" id="acc-alberg-dot"></div>
+                                    </div>
+                                    <span class="text-[9px] font-black text-accentBlue uppercase">ALBERGUE</span>
+                                </div>
+                                <h4 class="text-xs sm:text-sm font-black text-textDark">Albergues Premium</h4>
+                                <p class="text-xs text-accentBlue font-extrabold mt-1">25 € / nit</p>
+                            </div>
+
+                            <!-- Option C: Hotels -->
+                            <div onclick="selectAccommodation('hotel')" id="acc-hotel" class="acc-card border-2 border-blue-200 bg-blue-50/30 p-4 rounded-xl cursor-pointer hover:border-accentBlue transition-all duration-300 relative shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="w-4 h-4 rounded-full border-2 border-blue-200 flex items-center justify-center p-0.5" id="acc-hotel-ring">
+                                        <div class="w-full h-full rounded-full bg-transparent" id="acc-hotel-dot"></div>
+                                    </div>
+                                    <span class="text-[9px] font-black text-accentBlue uppercase font-mono">HOTEL</span>
+                                </div>
+                                <h4 class="text-xs sm:text-sm font-black text-textDark">Hotels Rurals</h4>
+                                <p class="text-xs text-accentBlue font-extrabold mt-1">55 € / nit</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selection 3: Extras Services -->
+                    <div>
+                        <label class="block text-[11px] font-extrabold uppercase tracking-wider text-textDark mb-4">
+                            SERVEIS EXTRES D’ASSISTÈNCIA
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <!-- Extra 1 -->
+                            <div onclick="toggleExtra('fisioterapia')" id="ext-fisioterapia" class="extra-card border-2 border-blue-200 bg-blue-50/30 p-5 rounded-xl cursor-pointer hover:border-accentBlue transition-all duration-300 flex items-start gap-3 shadow-sm">
+                                <div class="w-5 h-5 rounded border-2 border-blue-300 flex items-center justify-center text-xs text-transparent bg-slate-100 mt-0.5" id="chk-fisioterapia">
+                                    <i class="fa-solid fa-check text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-black text-textDark">Fisioteràpia</h4>
+                                    <p class="text-[11px] text-textMuted font-bold mt-1">+45 € per etapa</p>
+                                </div>
+                            </div>
+
+                            <!-- Extra 2 -->
+                            <div onclick="toggleExtra('fotos')" id="ext-fotos" class="extra-card border-2 border-blue-200 bg-blue-50/30 p-5 rounded-xl cursor-pointer hover:border-accentBlue transition-all duration-300 flex items-start gap-3 shadow-sm">
+                                <div class="w-5 h-5 rounded border-2 border-blue-300 flex items-center justify-center text-xs text-transparent bg-slate-100 mt-0.5" id="chk-fotos">
+                                    <i class="fa-solid fa-check text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-black text-textDark">Pack de Fotos</h4>
+                                    <p class="text-[11px] text-textMuted font-bold mt-1">+25 € fix</p>
+                                </div>
+                            </div>
+
+                            <!-- Extra 3 -->
+                            <div onclick="toggleExtra('bici')" id="ext-bici" class="extra-card border-2 border-blue-200 bg-blue-50/30 p-5 rounded-xl cursor-pointer hover:border-accentBlue transition-all duration-300 flex items-start gap-3 shadow-sm">
+                                <div class="w-5 h-5 rounded border-2 border-blue-300 flex items-center justify-center text-xs text-transparent bg-slate-100 mt-0.5" id="chk-bici">
+                                    <i class="fa-solid fa-check text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-black text-textDark">Lloguer Bici Orbea</h4>
+                                    <p class="text-[11px] text-textMuted font-bold mt-1">+75 € (Duatló)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selection 4: Sorteig Premium ticket checkbox -->
+                    <div class="bg-gradient-to-r from-accentBlue/10 via-blue-50 to-accentCyan/10 border-2 border-blue-200 p-5 rounded-xl flex items-center justify-between gap-4 shadow-sm">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="premium-ticket-chk" onchange="calculateBudget()" class="w-5 h-5 rounded border-blue-300 text-accentBlue bg-white focus:ring-0 cursor-pointer mt-1 accent-accentBlue shadow-sm">
+                            <div>
+                                <h4 class="text-sm font-extrabold text-textDark flex items-center gap-2">
+                                    Sorteig Extra Premium BTT Orbea Alma <span class="bg-accentBlue/20 text-accentBlue text-[9px] font-mono font-bold px-1.5 py-0.5 rounded uppercase">RECOMANAT</span>
+                                </h4>
+                                <p class="text-xs text-textMuted mt-0.5 font-bold">Opta al gran sorteig del quadre de carboni professional orbea d'elit.</p>
+                            </div>
+                        </div>
+                        <span class="text-sm font-black text-accentBlue font-mono">+10 €</span>
+                    </div>
+
+                </div>
+
+                <!-- Right panel: Receipt Invoice Summary (5 columns) -->
+                <div class="lg:col-span-5 bg-white/90 backdrop-blur-md border-2 border-blue-200 p-6 sm:p-8 rounded-2xl flex flex-col justify-between shadow-xl min-h-[500px]">
+                    <div>
+                        <div class="flex justify-between items-center mb-6 border-b border-blue-200 pb-4">
+                            <h3 class="font-serif text-lg sm:text-xl font-bold tracking-wider text-textDark">RESUM DEL PRESSUPOST</h3>
+                            <span class="bg-accentBlue/10 text-accentBlue text-[9px] font-extrabold uppercase px-2.5 py-1 rounded-full">ACTIU</span>
+                        </div>
+
+                        <!-- Invoice rows -->
+                        <div class="space-y-4 text-sm font-bold" id="invoice-summary">
+                            <div class="flex justify-between items-center text-textMuted">
+                                <span>Preu Base (Ruta)</span>
+                                <span class="font-extrabold text-textDark font-mono" id="invoice-base">0 €</span>
+                            </div>
+                            <div class="flex justify-between items-center text-textMuted">
+                                <span>Allotjament (<span id="invoice-nights-desc">0 nits</span>)</span>
+                                <span class="font-extrabold text-textDark font-mono" id="invoice-acc">0 €</span>
+                            </div>
+                            <div class="flex justify-between items-center text-textMuted">
+                                <span>Fisioteràpia</span>
+                                <span class="font-extrabold text-textDark font-mono" id="invoice-fisioterapia">0 €</span>
+                            </div>
+                            <div class="flex justify-between items-center text-textMuted">
+                                <span>Pack de Fotos</span>
+                                <span class="font-extrabold text-textDark font-mono" id="invoice-fotos">0 €</span>
+                            </div>
+                            <div class="flex justify-between items-center text-textMuted">
+                                <span>Lloguer Bici Orbea</span>
+                                <span class="font-extrabold text-textDark font-mono" id="invoice-bici">0 €</span>
+                            </div>
+                            <div class="flex justify-between items-center text-textMuted">
+                                <span>Sorteig Premium (BTT Orbea)</span>
+                                <span class="font-extrabold text-accentBlue font-mono" id="invoice-raffle">0 €</span>
+                            </div>
+                        </div>
+
+                        <!-- Separation divider -->
+                        <div class="border-t border-dashed border-blue-200 my-8"></div>
+                    </div>
+
+                    <div>
+                        <!-- Main total display -->
+                        <div class="flex items-end justify-between mb-8">
+                            <span class="text-sm font-bold text-textMuted uppercase tracking-widest font-black">PREU FINAL</span>
+                            <span class="text-4xl sm:text-5xl font-serif font-black text-accentYellow hover:text-accentYellowHover tracking-tight font-mono transition-colors" id="invoice-total">120 €</span>
+                        </div>
+
+                        <!-- CTA Register button -->
+                        <button onclick="openRegistrationModal()" class="w-full py-4 bg-accentBlue hover:bg-accentBlueHover text-white font-extrabold text-base rounded-xl uppercase tracking-wide transition-all duration-300 shadow-lg shadow-accentBlue/20 hover:shadow-accentBlue/40 text-center block">
+                            Formalitzar Inscripció amb aquest Pressupost
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SUCCESS REGISTRATION STEPPER MODAL -->
+    <div id="register-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white border-2 border-blue-200 w-full max-w-lg rounded-2xl p-6 sm:p-8 relative shadow-2xl overflow-hidden">
+           
+            <!-- Floating close button -->
+            <button onclick="closeRegistrationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-textDark text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Success Header -->
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 bg-accentBlue/10 text-accentBlue border border-accentBlue/20 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                    <i class="fa-solid fa-circle-check text-3xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-black text-textDark uppercase tracking-wide">INSCRIPCIÓ EN MARXA</h3>
+                <p class="text-textMuted text-xs mt-1 font-bold">Completa les teves dades per validar el teu dorsal reservat</p>
+            </div>
+
+            <!-- Precalculated Price Indicator -->
+            <div class="bg-blue-50/80 p-4 rounded-xl border border-blue-200 flex items-center justify-between mb-6">
+                <div>
+                    <span class="text-[10px] text-textMuted uppercase tracking-wider block font-black">PREU DEL TEU PRESSUPOST</span>
+                    <span class="text-xs font-bold text-accentBlue" id="modal-route-display">Camí Francès</span>
+                </div>
+                <span class="text-2xl font-serif font-black text-accentBlue font-mono" id="modal-price-display">120 €</span>
+            </div>
+
+            <!-- Form -->
+            <form id="reg-form" action="enviar-inscripcion.php" method="POST" onsubmit="handleRegistrationSubmit(event)" class="space-y-4">
+                <input type="hidden" name="ruta" id="form-route-hidden" value="">
+                <input type="hidden" name="precio" id="form-price-hidden" value="">
+
+                <div>
+                    <label class="block text-xs font-bold text-textDark uppercase mb-2">Nom Complet</label>
+                    <input type="text" name="name" required placeholder="Ex. Joan Garcia i Pons" class="w-full bg-[#f8fafc] border border-blue-200 rounded-xl px-4 py-3 text-sm text-textDark focus:outline-none focus:border-accentBlue shadow-inner">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-textDark uppercase mb-2">Correu Electrònic</label>
+                        <input type="email" name="email" required placeholder="joan@gmail.com" class="w-full bg-[#f8fafc] border border-blue-200 rounded-xl px-4 py-3 text-sm text-textDark focus:outline-none focus:border-accentBlue shadow-inner">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-textDark uppercase mb-2">Telèfon Contacte</label>
+                        <input type="tel" name="phone" required placeholder="+34 600 000 000" class="w-full bg-[#f8fafc] border border-blue-200 rounded-xl px-4 py-3 text-sm text-textDark focus:outline-none focus:border-accentBlue shadow-inner">
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full py-4 bg-accentBlue hover:bg-accentBlueHover text-white font-extrabold text-sm rounded-xl uppercase tracking-wide transition-all duration-300 shadow-md">
+                        Finalitzar i Pagar Reserva
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST DIALOG MESSAGE -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-accentBlue text-white font-bold px-6 py-4 rounded-xl shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="toast-message">Inscripció realitzada correctament!</span>
+    </div>
+
+    <!-- RUTAS EN GOOGLE MAPS -->
+    <section id="mapas" class="py-16 bg-yellow-50/40 border-t border-yellow-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h3 class="text-accentYellow font-serif text-lg font-extrabold uppercase tracking-widest">Ver Rutas en Google Maps</h3>
+                <p class="text-textDark text-sm font-bold mt-3">Selecciona una ruta para abrir su ubicación en Google Maps. Se abrirá en una nueva pestaña.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://www.google.com/maps/place/Camino+de+Santiago+franc%C3%A9s/@42.6048277,-6.8101341,3a,75y,336.53h,69.8t/data=!3m7!1e1!3m5!1s9nOAupLlc6-n962odhkj8g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D20.1988078013662%26panoid%3D9nOAupLlc6-n962odhkj8g%26yaw%3D336.533297122523!7i16384!8i8192!4m10!1m2!2m1!1sCam%C3%AD+frances+camino+de+santiafo!3m6!1s0xd30950001c412a9:0xcf4ffc8ba866d8d1!8m2!3d42.6048345!4d-6.8101483!15sCiBDYW3DrSBmcmFuY2VzIGNhbWlubyBkZSBzYW50aWFnb5IBC2hpa2luZ19hcmVh4AEA!16s%2Fg%2F11z4_cvcpk?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="group block bg-white/80 p-0 rounded-xl border border-blue-200 shadow hover:shadow-lg transition overflow-hidden">
+                    <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&w=900&h=600&pitch=20.1988078013662&panoid=9nOAupLlc6-n962odhkj8g&yaw=336.533297122523" alt="Camí Francès - Street View" class="w-full h-40 object-cover" loading="lazy">
+                    <div class="p-4">
+                        <div class="text-sm font-extrabold text-textDark">Camí Francès</div>
+                        <div class="text-xs text-textMuted">Ver en Google Maps</div>
+                    </div>
+                </a>
+
+                <a href="https://www.google.com/maps/place/Camino+Portugu%C3%A9s+de+Santiago/@42.4324966,-8.6399505,3a,75y,178.7h,102.52t/data=!3m7!1e1!3m5!1scfxhY6UbLYhSrMI4VCAyHw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.521156421188564%26panoid%3DcfxhY6UbLYhSrMI4VCAyHw%26yaw%3D178.69594408020387!7i16384!8i8192!4m13!1m2!2m1!1sCam%C3%AD+portuguescamino+de+santiafo!3m9!1s0xd2f0d005c17b8cb:0x8ec33d0ecce628f8!8m2!3d42.4325024!4d-8.6399853!10e5!14m1!1BCgIgARICCAI!15sCiNDYW3DrSBwb3J0dWd1w6lzIGNhbWlubyBkZSBzYW50aWFnb1olIiNjYW3DrSBwb3J0dWd1w6lzIGNhbWlubyBkZSBzYW50aWFnb5IBC2hpa2luZ19hcmVhmgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJzeFQxWkhjSFJUZWxrd1RVaHNZVTFzY0ZkaWJURktXREo0UldOdVl4QULgAQD6AQQIABAw!16s%2Fg%2F11y43xthq0?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="group block bg-white/80 p-0 rounded-xl border border-blue-200 shadow hover:shadow-lg transition overflow-hidden">
+                    <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&w=900&h=600&pitch=-12.521156421188564&panoid=cfxhY6UbLYhSrMI4VCAyHw&yaw=178.69594408020387" alt="Camí Portuguès - Street View" class="w-full h-40 object-cover" loading="lazy">
+                    <div class="p-4">
+                        <div class="text-sm font-extrabold text-textDark">Camí Portuguès</div>
+                        <div class="text-xs text-textMuted">Ver en Google Maps</div>
+                    </div>
+                </a>
+
+                <a href="https://www.google.com/maps/place/Camino+de+Santiago+Norte/@43.473274,-5.5042813,3a,75y,269.38h,74.14t/data=!3m7!1e1!3m5!1sKXf5QvD9kVPW29hCo_ACeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D15.863304110818774%26panoid%3DKXf5QvD9kVPW29hCo_ACeA%26yaw%3D269.3843606348237!7i13312!8i6656!4m10!1m2!2m1!1sruta+de+camino+del+norte!3m6!1s0xd366f0078010257:0x9326dabab0c6f5c8!8m2!3d43.4732427!4d-5.504258!15sChhydXRhIGRlIGNhbWlubyBkZWwgbm9ydGVaGiIYcnV0YSBkZSBjYW1pbm8gZGVsIG5vcnRlkgELaGlraW5nX2FyZWGaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMjA1Wm1SWGVFeE9WbFp1VGxoYWJsVXliM1JXYldoNldua3hjVkZ1WXhBQuABAPoBBAgYECA!16s%2Fg%2F11vwzrb4xr?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="group block bg-white/80 p-0 rounded-xl border border-blue-200 shadow hover:shadow-lg transition overflow-hidden">
+                    <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&w=900&h=600&pitch=15.863304110818774&panoid=KXf5QvD9kVPW29hCo_ACeA&yaw=269.3843606348237" alt="Camí del Nord - Street View" class="w-full h-40 object-cover" loading="lazy">
+                    <div class="p-4">
+                        <div class="text-sm font-extrabold text-textDark">Camí del Nord</div>
+                        <div class="text-xs text-textMuted">Ver en Google Maps</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PATROCINADORS SECTION -->
+    <section class="py-16 bg-blue-50/50 border-t border-blue-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-center text-[10px] font-black text-textDark uppercase tracking-widest mb-10">PARTNERS OFICIALS 2026</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity duration-500">
+                <!-- Orbea Partner -->
+                <a href="https://www.orbea.com/es-es" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center border-2 border-blue-200 shadow-sm">
+                        <i class="fa-solid fa-bicycle text-4xl text-textDark"></i>
+                    </div>
+                    <span class="text-xs font-bold text-textDark tracking-wide">ORBEA</span>
+                </a>
+                <!-- Photo Partner -->
+                <a href="https://www.sportograf.com/en" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center border-2 border-blue-200 shadow-sm">
+                        <i class="fa-solid fa-camera-retro text-4xl text-textDark"></i>
+                    </div>
+                    <span class="text-xs font-bold text-textDark tracking-wide">SPORT-PHOTO</span>
+                </a>
+                <!-- Energy Partner -->
+                <a href="https://volt-oficial.com/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center border-2 border-blue-200 shadow-sm">
+                        <i class="fa-solid fa-bolt-lightning text-4xl text-textDark"></i>
+                    </div>
+                    <span class="text-xs font-bold text-textDark tracking-wide">VOLT-ENERGY</span>
+                </a>
+                <!-- Local Entity Partner -->
+                <a href="https://www.escapadarural.com/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-3 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center border-2 border-blue-200 shadow-sm">
+                        <i class="fa-solid fa-mountain-city text-4xl text-textDark"></i>
+                    </div>
+                    <span class="text-xs font-bold text-textDark tracking-wide">TURISME RURAL</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-blue-900 border-t border-blue-800 py-12 px-4 sm:px-6 lg:px-8 text-center text-xs text-blue-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="font-serif text-sm tracking-wider font-extrabold text-white">CAMÍ DUATHLON</span>
+                <span class="text-blue-700">|</span>
+                <span class="font-medium">© 2026 Trail & BTT Challenge</span>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="text-blue-200 hover:text-accentYellow transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
+                <a href="#" class="text-blue-200 hover:text-accentYellow transition-colors"><i class="fa-brands fa-facebook text-base"></i></a>
+                <a href="#" class="text-blue-200 hover:text-accentYellow transition-colors"><i class="fa-brands fa-youtube text-base"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // REAL GEOGRAPHIC-INSPIRED ALTIMETRY PROFILES FOR MULTIPLE DAYS
+        const routesData = {
+            frances: {
+                title: "CAMÍ FRANCÈS (SARRIA - SANTIAGO)",
+                badge: "MÍTICA RUTA DELS TEMPLERS",
+                desc: "La secció més èpica del Camí Francès. Sortirem des de Sarria superant crestes boscoses a peu, abans de muntar a la bicicleta per creuar les extenses valls de Portomarín i Melide fins a arribar a la icònica Plaza de l'Obradoiro.",
+                distTrail: "35 km",
+                distBtt: "80 km",
+                stages: 4,
+                basePrice: 120,
+                endpoints: "Sarria - Santiago",
+                difficulty: "Mitjana",
+                terrain: "Pistes forestals, corriolets de terra i ponts rurals",
+                shoes: "Trail mixt amb tacs d'adherència mitjana",
+                tires: "Coberta ràpida rodadora o Gravel de 40mm",
+                days: [
+                    {
+                        dayNum: 1,
+                        name: "Sarria a Portomarín",
+                        totalKm: 22,
+                        runKm: 7,
+                        points: [
+                            { km: 0, alt: 454 }, { km: 2, alt: 480 }, { km: 4, alt: 530 },
+                            { km: 5.5, alt: 580 }, { km: 7, alt: 660 },
+                            { km: 9, alt: 610 }, { km: 11, alt: 540 }, { km: 13, alt: 480 },
+                            { km: 15, alt: 410 }, { km: 18, alt: 390 }, { km: 20, alt: 420 }, { km: 22, alt: 365 }
+                        ]
+                    },
+                    {
+                        dayNum: 2,
+                        name: "Portomarín a Palas de Rei",
+                        totalKm: 25,
+                        runKm: 8,
+                        points: [
+                            { km: 0, alt: 365 }, { km: 2, alt: 410 }, { km: 4, alt: 480 },
+                            { km: 6, alt: 560 }, { km: 8, alt: 690 },
+                            { km: 10, alt: 720 }, { km: 12, alt: 710 }, { km: 15, alt: 650 },
+                            { km: 18, alt: 620 }, { km: 21, alt: 590 }, { km: 23, alt: 540 }, { km: 25, alt: 565 }
+                        ]
+                    },
+                    {
+                        dayNum: 3,
+                        name: "Palas de Rei a Arzúa",
+                        totalKm: 29,
+                        runKm: 9,
+                        points: [
+                            { km: 0, alt: 565 }, { km: 3, alt: 510 }, { km: 5, alt: 430 },
+                            { km: 7, alt: 470 }, { km: 9, alt: 440 },
+                            { km: 12, alt: 380 }, { km: 15, alt: 430 }, { km: 18, alt: 390 },
+                            { km: 21, alt: 340 }, { km: 24, alt: 320 }, { km: 27, alt: 360 }, { km: 29, alt: 389 }
+                        ]
+                    },
+                    {
+                        dayNum: 4,
+                        name: "Arzúa a Santiago de Compostela",
+                        totalKm: 38,
+                        runKm: 12,
+                        points: [
+                            { km: 0, alt: 389 }, { km: 4, alt: 340 }, { km: 8, alt: 310 },
+                            { km: 12, alt: 240 },
+                            { km: 15, alt: 260 }, { km: 19, alt: 295 }, { km: 23, alt: 250 },
+                            { km: 27, alt: 310 }, { km: 32, alt: 370 }, { km: 35, alt: 340 }, { km: 38, alt: 260 }
+                        ]
+                    }
+                ]
+            },
+            nord: {
+                title: "CAMÍ DEL NORD (RIBADESELLA - GIJÓN)",
+                badge: "COSTA ASTURIANA SALVATGE",
+                desc: "Traçat espectacular arran de penya-segat amb el Mar Cantàbric com a testimoni. Un recorregut altament tècnic on els boscos d'eucaliptus es fonen amb costes accidentades exigentment trencacames.",
+                distTrail: "40 km",
+                distBtt: "90 km",
+                stages: 5,
+                basePrice: 140,
+                endpoints: "Ribadesella - Gijón",
+                difficulty: "Alta (Físicament Exigent)",
+                terrain: "Senders costaners, prats humits, fang i trams d'asfalt ràpid",
+                shoes: "Trail tècnic amb tacs pronunciats (anti-fang)",
+                tires: "MTB de 2.2\" de perfil agressiu i bona tracció",
+                days: [
+                    {
+                        dayNum: 1,
+                        name: "Ribadesella a Colunga",
+                        totalKm: 20,
+                        runKm: 6,
+                        points: [
+                            { km: 0, alt: 5 }, { km: 2, alt: 40 }, { km: 4, alt: 110 },
+                            { km: 6, alt: 180 },
+                            { km: 8, alt: 120 }, { km: 11, alt: 95 }, { km: 14, alt: 150 },
+                            { km: 17, alt: 70 }, { km: 20, alt: 35 }
+                        ]
+                    },
+                    {
+                        dayNum: 2,
+                        name: "Colunga a Villaviciosa",
+                        totalKm: 18,
+                        runKm: 6,
+                        points: [
+                            { km: 0, alt: 35 }, { km: 3, alt: 90 }, { km: 6, alt: 160 },
+                            { km: 9, alt: 110 }, { km: 12, alt: 80 }, { km: 15, alt: 40 }, { km: 18, alt: 10 }
+                        ]
+                    },
+                    {
+                        dayNum: 3,
+                        name: "Villaviciosa a Gijón",
+                        totalKm: 29,
+                        runKm: 10,
+                        points: [
+                            { km: 0, alt: 10 }, { km: 3, alt: 130 }, { km: 6, alt: 290 },
+                            { km: 8, alt: 380 }, { km: 10, alt: 415 },
+                            { km: 13, alt: 350 }, { km: 16, alt: 260 }, { km: 20, alt: 180 },
+                            { km: 24, alt: 90 }, { km: 27, alt: 40 }, { km: 29, alt: 10 }
+                        ]
+                    },
+                    {
+                        dayNum: 4,
+                        name: "Gijón a Avilés",
+                        totalKm: 25,
+                        runKm: 8,
+                        points: [
+                            { km: 0, alt: 10 }, { km: 3, alt: 80 }, { km: 6, alt: 140 },
+                            { km: 8, alt: 155 },
+                            { km: 11, alt: 110 }, { km: 15, alt: 90 }, { km: 19, alt: 120 },
+                            { km: 22, alt: 60 }, { km: 25, alt: 15 }
+                        ]
+                    },
+                    {
+                        dayNum: 5,
+                        name: "Avilés a Muros de Nalón",
+                        totalKm: 23,
+                        runKm: 7,
+                        points: [
+                            { km: 0, alt: 15 }, { km: 3, alt: 75 }, { km: 5, alt: 130 },
+                            { km: 7, alt: 145 },
+                            { km: 10, alt: 100 }, { km: 13, alt: 85 }, { km: 17, alt: 120 },
+                            { km: 20, alt: 95 }, { km: 23, alt: 80 }
+                        ]
+                    }
+                ]
+            },
+            portugues: {
+                title: "CAMÍ PORTUGUÈS (TUI - SANTIAGO)",
+                badge: "BOSCOS DE GALÍCIA SUD",
+                desc: "La variant verda amb bells ponts de pedra medievals i extenses carballeiras gallegues. Creua el sud de Galícia en un traçat de duatló de velocitat mitjana alta, ideal per a rodadors experimentats.",
+                distTrail: "30 km",
+                distBtt: "65 km",
+                stages: 3,
+                basePrice: 110,
+                endpoints: "Tui - Santiago de Compostela",
+                difficulty: "Baixa-Moderada",
+                terrain: "Camins empedrats rurals, pistes planeres i ponts hsitòrics",
+                shoes: "Bambes de Trail amortides o d'asfalt reforçades",
+                tires: "Gravel suau de 38mm o BTT de perfil rodador fast-track",
+                days: [
+                    {
+                        dayNum: 1,
+                        name: "Tui a Redondela",
+                        totalKm: 32,
+                        runKm: 10,
+                        points: [
+                            { km: 0, alt: 50 }, { km: 3, alt: 95 }, { km: 6, alt: 180 },
+                            { km: 10, alt: 245 },
+                            { km: 14, alt: 190 }, { km: 18, alt: 120 }, { km: 22, alt: 85 },
+                            { km: 26, alt: 140 }, { km: 29, alt: 90 }, { km: 32, alt: 18 }
+                        ]
+                    },
+                    {
+                        dayNum: 2,
+                        name: "Redondela a Pontevedra",
+                        totalKm: 20,
+                        runKm: 6,
+                        points: [
+                            { km: 0, alt: 18 }, { km: 3, alt: 110 }, { km: 6, alt: 175 },
+                            { km: 9, alt: 130 }, { km: 12, alt: 90 }, { km: 16, alt: 50 }, { km: 20, alt: 12 }
+                        ]
+                    },
+                    {
+                        dayNum: 3,
+                        name: "Pontevedra a Caldas de Reis",
+                        totalKm: 22,
+                        runKm: 7,
+                        points: [
+                            { km: 0, alt: 12 }, { km: 3, alt: 60 }, { km: 7, alt: 120 },
+                            { km: 11, alt: 145 }, { km: 15, alt: 110 }, { km: 19, alt: 75 }, { km: 22, alt: 48 }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // CALCULATOR & RENDER STATE
+        let currentRouteId = "frances";
+        let activeDayNum = 1;
+        let selectedAccommodationOption = "cap"; // cap, alberg, hotel
+        const extrasState = {
+            fisioterapia: false,
+            fotos: false,
+            bici: false
+        };
+
+        // WHEEL SPINNING SYSTEM VARIABLES
+        const wheelRoutesOrder = ['frances', 'nord', 'portugues'];
+        const routeCarouselOrder = ['frances', 'nord', 'portugues'];
+        let activeWheelIndex = 0; // 0 = Frances, 1 = Nord, 2 = Portugues
+        let cumulativeRotationDegrees = 0; // Cumulative spin angle tracking
+
+        // CANVAS PLOTTING VARIABLES
+        let canvas, ctx;
+        let dpr = window.devicePixelRatio || 1;
+        let hoverX = -1;
+        let isHovering = false;
+
+        window.onload = function () {
+            // Setup mobile navigation burger trigger
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const expanded = !mobileMenu.classList.contains('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', expanded.toString());
+                });
+            }
+
+            // Canvas initialization
+            canvas = document.getElementById('elevationCanvas');
+            ctx = canvas.getContext('2d');
+
+            // Responsive Canvas resizing
+            window.addEventListener('resize', resizeCanvas);
+            setupCanvasInteraction();
+
+            // Load initial view
+            switchRoute("frances");
+            calculateBudget();
+           
+            // Build and rotate Route Wheel to initial position
+            spinToRouteIndex(0, true);
+
+            // Setup Touch Swipes on Requirements Card container
+            setupSwipeGestures();
+        };
+
+        function resizeCanvas() {
+            const container = document.getElementById('canvas-container');
+            const rect = container.getBoundingClientRect();
+
+            const displayHeight = window.innerWidth < 640 ? 320 : 400;
+           
+            canvas.width = rect.width * dpr;
+            canvas.height = displayHeight * dpr;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = displayHeight + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            drawElevationChart();
+        }
+
+        // WHEEL SPINNER MATH & LOGIC
+        function spinToRouteIndex(targetIndex, instant = false) {
+            // Find minimal rotation direction (-1, 0, 1)
+            let diff = targetIndex - activeWheelIndex;
+            if (diff > 1) diff -= 3;
+            if (diff < -1) diff += 3;
+
+            // Increment cumulative degrees (Each step of 1 is 120 degrees)
+            // Spin clockwise or counterclockwise based on calculation
+            cumulativeRotationDegrees -= diff * 120;
+            activeWheelIndex = targetIndex;
+
+            const compassRing = document.getElementById('compass-ring');
+            if (compassRing) {
+                if (instant) {
+                    compassRing.style.transition = 'none';
+                    compassRing.style.transform = `rotate(${cumulativeRotationDegrees}deg)`;
+                    // Force reflow
+                    compassRing.offsetHeight;
+                    compassRing.style.transition = '';
+                } else {
+                    compassRing.style.transform = `rotate(${cumulativeRotationDegrees}deg)`;
+                }
+            }
+
+            // Correct orientation of node elements inside rotating dial so they stay upright
+            const nodes = document.querySelectorAll('.wheel-node');
+            nodes.forEach((node, idx) => {
+                const wrapper = node.querySelector('.wheel-icon-wrapper');
+                if (wrapper) {
+                    // Compute absolute target counter-rotation
+                    let baseDegree = idx * 120; // Original absolute angular placement on circle
+                    let counterRotate = -cumulativeRotationDegrees - baseDegree;
+                    wrapper.style.transform = `rotate(${counterRotate}deg)`;
+
+                    // Active glow effects on icons
+                    if (idx === activeWheelIndex) {
+                        wrapper.classList.remove('bg-blue-100', 'text-accentBlue', 'border-accentBlue/20');
+                        wrapper.classList.add('bg-accentYellow', 'text-black', 'border-white', 'scale-110');
+                    } else {
+                        wrapper.classList.add('bg-blue-100', 'text-accentBlue', 'border-accentBlue/20');
+                        wrapper.classList.remove('bg-accentYellow', 'text-black', 'border-white', 'scale-110');
+                    }
+                }
+            });
+
+            // Update bottom helper text
+            // Render requirements details inside card with animation
+            renderRouteCardContent(wheelRoutesOrder[activeWheelIndex]);
+
+            // Sync with other sections (Map Altimetry and Budget calculator dropdown)
+            if (currentRouteId !== wheelRoutesOrder[activeWheelIndex]) {
+                switchRoute(wheelRoutesOrder[activeWheelIndex]);
+            }
+        }
+
+        function spinWheelNext() {
+            let nextIndex = (activeWheelIndex + 1) % 3;
+            spinToRouteIndex(nextIndex);
+        }
+
+        function spinWheelPrev() {
+            let prevIndex = (activeWheelIndex - 1 + 3) % 3;
+            spinToRouteIndex(prevIndex);
+        }
+
+        // RENDERING THE ROUTE DETAILS INSIDE THE PREPARATION CARD
+        function renderRouteCardContent(routeId) {
+            const cardInner = document.getElementById('carousel-active-content');
+            if (!cardInner) return;
+
+            // Visual transition fade-out/in
+            cardInner.classList.remove('opacity-100', 'translate-x-0');
+            cardInner.classList.add('opacity-0', 'translate-x-4');
+
+            setTimeout(() => {
+                let htmlContent = "";
+
+                if (routeId === 'frances') {
+                    htmlContent = `
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-accentBlue/10 text-accentBlue border border-accentBlue/20 text-[10px] uppercase font-extrabold px-3 py-1 rounded-full">Exigència Moderada</span>
+                                <span class="text-xs text-textMuted font-bold flex items-center gap-1"><i class="fa-solid fa-clock text-accentYellow"></i> 10 Setmanes d'Entrenament</span>
+                            </div>
+                            <h3 class="font-serif text-3xl font-black text-textDark flex items-center gap-3">
+                                <i class="fa-solid fa-flag text-accentBlue"></i> Camí Francès
+                            </h3>
+                            <p class="text-textMuted leading-relaxed font-semibold text-sm sm:text-base">
+                                Participació pensada per a aficionats amb experiència moderada en curses i ciclisme. Manteniment bàsic de la bicicleta i entrenaments regulars en rutes de terra de 15-20 km amb desnivells planificats.
+                            </p>
+                           
+                            <!-- Essential Gear Grid -->
+                            <div class="bg-blue-50/60 p-5 rounded-2xl border border-blue-200/80 space-y-3 shadow-sm">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-accentBlue">Equipament Recomanat</h4>
+                                <ul class="grid grid-cols-2 gap-3 text-xs sm:text-sm text-textDark font-bold">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Casc homologat</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Calçat de Trail mixt</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Hidratació 2 Litres</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Nutrició esportiva</li>
+                                </ul>
+                            </div>
+
+                            <!-- Weekly Breakdown -->
+                            <div class="space-y-3">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-textMuted">Pla d'entrenament Resumit</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentBlue font-extrabold text-[10px] block mb-1">Setmanes 1–3</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">Caminades i curses suaus de 8–10 km. Força 1 cop per setmana.</p>
+                                    </div>
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentBlue font-extrabold text-[10px] block mb-1">Setmanes 4–6</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">12–18 km per sortida amb canvis de desnivell ràpids.</p>
+                                    </div>
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentBlue font-extrabold text-[10px] block mb-1">Setmanes 7–10</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">Simulacions de transició (bici + cursa) de volum mitjà.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (routeId === 'nord') {
+                    htmlContent = `
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-red-500/10 text-red-600 border border-red-500/20 text-[10px] uppercase font-extrabold px-3 py-1 rounded-full">Exigència Màxima</span>
+                                <span class="text-xs text-textMuted font-bold flex items-center gap-1"><i class="fa-solid fa-clock text-accentYellow"></i> Preparació Avançada</span>
+                            </div>
+                            <h3 class="font-serif text-3xl font-black text-textDark flex items-center gap-3">
+                                <i class="fa-solid fa-mountain text-accentCyan"></i> Camí del Nord
+                            </h3>
+                            <p class="text-textMuted leading-relaxed font-semibold text-sm sm:text-base">
+                                Orientada a atletes i ciclistes amb <span class="text-accentBlue font-black">alta condició física</span>. El traçat de la costa asturiana és tècnic, trencacames i requereix gestió avançada de desnivell i terreny relliscós.
+                            </p>
+                           
+                            <!-- Essential Gear Grid -->
+                            <div class="bg-blue-50/60 p-5 rounded-2xl border border-blue-200/80 space-y-3 shadow-sm">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-accentCyan">Equipament Específic</h4>
+                                <ul class="grid grid-cols-2 gap-3 text-xs sm:text-sm text-textDark font-bold">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentCyan"></i> Pneumàtics 2.2" de fang</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentCyan"></i> Sola taquejat gran (Trail)</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentCyan"></i> GPS amb track oficial</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentCyan"></i> Paravents impermeable</li>
+                                </ul>
+                            </div>
+
+                            <!-- Weekly Breakdown -->
+                            <div class="space-y-3">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-textMuted">Pla d'entrenament Resumit</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentCyan font-extrabold text-[10px] block mb-1">Setmanes 1–3</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">Sèries de pujades aeròbiques de 12-15 km. Força 2 cops/setmana.</p>
+                                    </div>
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentCyan font-extrabold text-[10px] block mb-1">Setmanes 4–8</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">Fases de transició BTT dura (80km) + cursa exigent (10km).</p>
+                                    </div>
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentCyan font-extrabold text-[10px] block mb-1">Setmanes 9–10</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">Tapering de reducció de volum al 30-40% per arribar fresc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (routeId === 'portugues') {
+                    htmlContent = `
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 text-[10px] uppercase font-extrabold px-3 py-1 rounded-full">Exigència Baixa-Moderada</span>
+                                <span class="text-xs text-textMuted font-bold flex items-center gap-1"><i class="fa-solid fa-clock text-accentYellow"></i> Ideal per a Debutants</span>
+                            </div>
+                            <h3 class="font-serif text-3xl font-black text-textDark flex items-center gap-3">
+                                <i class="fa-solid fa-tree text-accentBlue"></i> Camí Portuguès
+                            </h3>
+                            <p class="text-textMuted leading-relaxed font-semibold text-sm sm:text-base">
+                                Ideal per a participants de qualsevol nivell tècnic. Els senders són plans i amables, perfectes per gaudir de la natura gallega mentre et poses a prova en format duatló per primer cop.
+                            </p>
+                           
+                            <!-- Essential Gear Grid -->
+                            <div class="bg-blue-50/60 p-5 rounded-2xl border border-blue-200/80 space-y-3 shadow-sm">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-accentBlue">Equipament Recomanat</h4>
+                                <ul class="grid grid-cols-2 gap-3 text-xs sm:text-sm text-textDark font-bold">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Bicicleta Gravel o BTT ràpida</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Bambes de Trail lleugeres</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Protecció solar activa</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accentBlue"></i> Motxilla d'hidratació suau</li>
+                                </ul>
+                            </div>
+
+                            <!-- Weekly Breakdown -->
+                            <div class="space-y-3">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-textMuted">Pla d'entrenament Resumit</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentBlue font-extrabold text-[10px] block mb-1">Setmanes 1–3</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">2 sessions setmanals de córrer de 6–8 km fàcil.</p>
+                                    </div>
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentBlue font-extrabold text-[10px] block mb-1">Setmanes 4–6</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">Bici de distància rodadora de 30-40km a ritme còmode.</p>
+                                    </div>
+                                    <div class="p-3 bg-blue-50/40 rounded-xl border border-blue-200">
+                                        <span class="text-accentBlue font-extrabold text-[10px] block mb-1">Setmanes 7–10</span>
+                                        <p class="text-textMuted text-[11px] leading-tight font-semibold">Fusions curtes d'entrenament per habituar la transició.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                cardInner.innerHTML = htmlContent;
+
+                // Animate card content back to visible
+                cardInner.classList.remove('opacity-0', 'translate-x-4');
+                cardInner.classList.add('opacity-100', 'translate-x-0');
+
+            }, 250);
+        }
+
+        // SWIPE SYSTEM IMPLEMENTATION FOR MOBILE TOUCH DEVICES
+        let touchstartX = 0;
+        let touchendX = 0;
+
+        function setupSwipeGestures() {
+            const container = document.getElementById('preparacio-card-container');
+            if (!container) return;
+
+            container.addEventListener('touchstart', function(e) {
+                touchstartX = e.changedTouches[0].screenX;
+            }, false);
+
+            container.addEventListener('touchend', function(e) {
+                touchendX = e.changedTouches[0].screenX;
+                handleSwipeGesture();
+            }, false);
+        }
+
+        function handleSwipeGesture() {
+            const threshold = 50; // pixels swiped to trigger rotation
+            if (touchendX < touchstartX - threshold) {
+                // Swiped Left -> next route
+                spinWheelNext();
+            }
+            if (touchendX > touchstartX + threshold) {
+                // Swiped Right -> previous route
+                spinWheelPrev();
+            }
+        }
+
+        // DAY SELECTION SYSTEM FOR CANVASES
+        function setupDayTabs(routeId) {
+            const route = routesData[routeId];
+            const container = document.getElementById('day-tabs-container');
+            container.innerHTML = ""; // Clear existing tabs
+
+            route.days.forEach(day => {
+                const button = document.createElement('button');
+                button.id = `tab-day-${day.dayNum}`;
+                button.onclick = () => selectDay(day.dayNum);
+               
+                button.className = "px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide transition-all duration-300 border " +
+                    (day.dayNum === activeDayNum
+                        ? "bg-accentBlue border-accentBlue text-white shadow-md shadow-accentBlue/15"
+                        : "bg-blue-50 border-blue-200 text-textDark hover:text-accentBlue hover:border-blue-400");
+               
+                button.innerHTML = `<i class="fa-solid fa-calendar-day mr-1.5"></i> Dia ${day.dayNum}`;
+                container.appendChild(button);
+            });
+        }
+
+        function selectDay(dayNum) {
+            activeDayNum = dayNum;
+           
+            const route = routesData[currentRouteId];
+            route.days.forEach(day => {
+                const btn = document.getElementById(`tab-day-${day.dayNum}`);
+                if (btn) {
+                    if (day.dayNum === activeDayNum) {
+                        btn.className = "px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide transition-all duration-300 border bg-accentBlue border-accentBlue text-white shadow-md shadow-accentBlue/15";
+                    } else {
+                        btn.className = "px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide transition-all duration-300 border bg-blue-50 border-blue-200 text-textDark hover:text-accentBlue hover:border-blue-400";
+                    }
+                }
+            });
+
+            const activeDayData = route.days.find(d => d.dayNum === activeDayNum);
+            document.getElementById('station-name').innerText = `Etapa ${activeDayData.dayNum}: ${activeDayData.name} (${activeDayData.totalKm.toFixed(1)} KM)`;
+            document.getElementById('station-desc').innerText = `Traçat que requereix superar els primers ${activeDayData.runKm} km en modalitat Trail Running (Groc) abans de fer la transició (T1) al segment de ciclisme BTT/Gravel (Blau).`;
+
+            drawElevationChart();
+        }
+
+        function interpolateElevation(km, points) {
+            if (km <= points[0].km) return points[0].alt;
+            if (km >= points[points.length - 1].km) return points[points.length - 1].alt;
+
+            for (let i = 0; i < points.length - 1; i++) {
+                if (km >= points[i].km && km <= points[i + 1].km) {
+                    const ratio = (km - points[i].km) / (points[i+1].km - points[i].km);
+                    return points[i].alt + ratio * (points[i+1].alt - points[i].alt);
+                }
+            }
+            return points[0].alt;
+        }
+
+        function calculateSlope(km, points, totalKm) {
+            const step = 0.2;
+            const kmPrev = Math.max(0, km - step);
+            const kmNext = Math.min(totalKm, km + step);
+
+            const altPrev = interpolateElevation(kmPrev, points);
+            const altNext = interpolateElevation(kmNext, points);
+
+            const distDiff = (kmNext - kmPrev) * 1000;
+            if (distDiff === 0) return 0;
+
+            const heightDiff = altNext - altPrev;
+            const slope = (heightDiff / distDiff) * 100;
+            return parseFloat(slope.toFixed(1));
+        }
+
+        // DRAW ELEVATION GRAPH ON WINDOW RESIZE/LOAD
+        function drawElevationChart() {
+            if (!canvas || !ctx) return;
+
+            const width = canvas.width / dpr;
+            const height = canvas.height / dpr;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const route = routesData[currentRouteId];
+            if (!route) return;
+            const dayData = route.days.find(d => d.dayNum === activeDayNum) || route.days[0];
+
+            const padding = { top: 40, right: 40, bottom: 50, left: 65 };
+            const chartW = width - padding.left - padding.right;
+            const chartH = height - padding.top - padding.bottom;
+            if (chartW <= 0) return;
+
+            const altitudes = dayData.points.map(p => p.alt);
+            const minAlt = Math.max(0, Math.min(...altitudes) - 50);
+            const maxAlt = Math.max(...altitudes) + 50;
+
+            function getX(km) {
+                return padding.left + (km / dayData.totalKm) * chartW;
+            }
+            function getY(alt) {
+                return padding.top + chartH - ((alt - minAlt) / (maxAlt - minAlt)) * chartH;
+            }
+
+            // Grid lines (Crisp Blue Theme)
+            ctx.strokeStyle = "rgba(37, 99, 235, 0.12)";
+            ctx.lineWidth = 1;
+            ctx.fillStyle = "#1e3a8a";
+            ctx.font = "bold 11px Plus Jakarta Sans";
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+
+            const numGridLines = 4;
+            for (let i = 0; i <= numGridLines; i++) {
+                const val = minAlt + (i / numGridLines) * (maxAlt - minAlt);
+                const y = getY(val);
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(padding.left + chartW, y);
+                ctx.stroke();
+                ctx.fillText(Math.round(val) + 'm', padding.left - 15, y);
+            }
+
+            // Draw KM markers on bottom
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            const kmStep = Math.max(1, Math.ceil(dayData.totalKm / 5));
+            for (let km = 0; km <= dayData.totalKm; km += kmStep) {
+                const x = getX(km);
+                ctx.fillText(km + 'km', x, padding.top + chartH + 15);
+            }
+
+            // Gradient filling the elevation profile area with electric light blue look
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, "rgba(37, 99, 235, 0.22)");
+            gradient.addColorStop(0.5, "rgba(14, 165, 233, 0.08)");
+            gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+           
+            ctx.beginPath();
+            ctx.moveTo(getX(0), padding.top + chartH);
+            dayData.points.forEach(p => ctx.lineTo(getX(p.km), getY(p.alt)));
+            ctx.lineTo(getX(dayData.totalKm), padding.top + chartH);
+            ctx.closePath();
+            ctx.fillStyle = gradient;
+            ctx.fill();
+
+            // Draw segmented altimetry line (Striking Yellow for Trail, Electric Blue for BTT)
+            ctx.lineWidth = 4;
+            ctx.lineJoin = "round";
+            ctx.lineCap = "round";
+
+            for (let i = 0; i < dayData.points.length - 1; i++) {
+                const p1 = dayData.points[i];
+                const p2 = dayData.points[i + 1];
+                const isTrail = p1.km < dayData.runKm;
+                const color = isTrail ? "#f59e0b" : "#2563eb";
+
+                ctx.strokeStyle = color;
+                ctx.shadowColor = "rgba(0, 0, 0, 0.05)";
+                ctx.shadowBlur = 4;
+
+                ctx.beginPath();
+                ctx.moveTo(getX(p1.km), getY(p1.alt));
+                ctx.lineTo(getX(p2.km), getY(p2.alt));
+                ctx.stroke();
+            }
+           
+            ctx.shadowBlur = 0; // Reset shadow
+
+            // Interactive hover vertical tracker
+            if (isHovering && hoverX >= padding.left && hoverX <= padding.left + chartW) {
+                const hoverKm = ((hoverX - padding.left) / chartW) * dayData.totalKm;
+                const hoverAlt = interpolateElevation(hoverKm, dayData.points);
+                const hoverY = getY(hoverAlt);
+
+                // Vertical dashed lines
+                ctx.setLineDash([4, 4]);
+                ctx.strokeStyle = 'rgba(30, 58, 138, 0.3)';
+                ctx.beginPath();
+                ctx.moveTo(hoverX, padding.top);
+                ctx.lineTo(hoverX, padding.top + chartH);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Tracker dot
+                ctx.fillStyle = "#2563eb";
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = "rgba(37, 99, 235, 0.4)";
+
+                ctx.beginPath();
+                ctx.arc(hoverX, hoverY, 7, 0, Math.PI * 2);
+                ctx.fill();
+               
+                ctx.shadowBlur = 0;
+                ctx.strokeStyle = "#ffffff";
+                ctx.lineWidth = 3;
+                ctx.stroke();
+
+                updateTooltip(hoverKm, hoverAlt, dayData);
+            } else {
+                document.getElementById('chart-tooltip').style.opacity = '0';
+            }
+        }
+
+        function updateTooltip(km, alt, dayData) {
+            const tooltip = document.getElementById('chart-tooltip');
+            const slope = calculateSlope(km, dayData.points, dayData.totalKm);
+           
+            tooltip.style.opacity = '1';
+           
+            const containerRect = document.getElementById('canvas-container').getBoundingClientRect();
+            let leftPos = hoverX + 20;
+            if (leftPos + 210 > containerRect.width) leftPos = hoverX - 230;
+           
+            tooltip.style.left = leftPos + 'px';
+            tooltip.style.top = '20px';
+
+            document.getElementById('tooltip-km').innerText = km.toFixed(1) + ' km';
+            document.getElementById('tooltip-alt').innerText = Math.round(alt) + ' m';
+            document.getElementById('tooltip-slope').innerText = slope + ' %';
+           
+            const typeTag = document.getElementById('tooltip-type');
+            if (typeTag) {
+                const isTrail = km <= dayData.runKm;
+                typeTag.innerText = isTrail ? 'Trail Running' : 'BTT / Gravel';
+                typeTag.className = `uppercase text-[9px] px-1.5 py-0.5 rounded font-black ${isTrail ? 'bg-amber-500 text-white' : 'bg-blue-600 text-white'}`;
+            }
+        }
+
+        function setupCanvasInteraction() {
+            const moveHandler = (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                hoverX = clientX - rect.left;
+                isHovering = true;
+                drawElevationChart();
+            };
+           
+            canvas.addEventListener('mousemove', moveHandler);
+            canvas.addEventListener('touchstart', moveHandler);
+            canvas.addEventListener('touchmove', moveHandler);
+           
+            const leaveHandler = () => {
+                isHovering = false;
+                drawElevationChart();
+            };
+           
+            canvas.addEventListener('mouseleave', leaveHandler);
+            canvas.addEventListener('touchend', leaveHandler);
+        }
+
+        // SYNC SECTIONS WHEN SELECTION OCCURS
+        function syncAndCalculate() {
+            const selectEl = document.getElementById('sim-route');
+            if (!selectEl) return;
+            const routeId = selectEl.value;
+
+            // Rotate Wheel to match selected route
+            const idx = wheelRoutesOrder.indexOf(routeId);
+            if (idx !== -1 && idx !== activeWheelIndex) {
+                spinToRouteIndex(idx);
+            }
+
+            calculateBudget();
+        }
+
+        let activeRouteCarouselIndex = 0; // 0 = frances, 1 = nord, 2 = portugues
+
+        function switchRouteNext() {
+            activeRouteCarouselIndex = (activeRouteCarouselIndex + 1) % 3;
+            const routeId = routeCarouselOrder[activeRouteCarouselIndex];
+            switchRoute(routeId);
+        }
+
+        function switchRoutePrev() {
+            activeRouteCarouselIndex = (activeRouteCarouselIndex - 1 + 3) % 3;
+            const routeId = routeCarouselOrder[activeRouteCarouselIndex];
+            switchRoute(routeId);
+        }
+
+        function updateRouteCarouselCard(routeId) {
+            const route = routesData[routeId];
+            if (!route) return;
+
+            const card = document.getElementById('route-carousel-card');
+            const iconEl = document.getElementById('route-carousel-icon');
+            const badgeEl = document.getElementById('route-carousel-badge');
+            const titleEl = document.getElementById('route-carousel-title');
+            const descEl = document.getElementById('route-carousel-desc');
+            const stagesEl = document.getElementById('route-carousel-stages');
+            const distanceEl = document.getElementById('route-carousel-distance');
+
+            // Update background image based on route
+            let bgImage = 'linear-gradient(to bottom, rgba(239, 246, 255, 0.92), rgba(219, 234, 254, 0.98)), url(\'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80\')';
+            let iconClass = 'fa-flag';
+            let badgeText = 'RUTA DELS TEMPLERS';
+            let badgeColor = 'text-accentYellow';
+            let iconBgColor = 'bg-accentYellow';
+
+            if (routeId === 'nord') {
+                bgImage = 'linear-gradient(to bottom, rgba(239, 246, 255, 0.92), rgba(219, 234, 254, 0.98)), url(\'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80\')';
+                iconClass = 'fa-mountain';
+                badgeText = 'COSTA ASTURIANA';
+                badgeColor = 'text-accentCyan';
+                iconBgColor = 'bg-blue-100 text-accentBlue';
+            } else if (routeId === 'portugues') {
+                bgImage = 'linear-gradient(to bottom, rgba(239, 246, 255, 0.92), rgba(219, 234, 254, 0.98)), url(\'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=600&q=80\')';
+                iconClass = 'fa-tree';
+                badgeText = 'BOSCOS DE GALÍCIA SUD';
+                badgeColor = 'text-accentBlue';
+                iconBgColor = 'bg-blue-100 text-accentBlue';
+            }
+
+            card.style.backgroundImage = bgImage;
+            
+            // Update icon
+            iconEl.className = `w-10 h-10 rounded-xl ${iconBgColor} flex items-center justify-center font-black text-lg shadow-md group-hover:rotate-6 transition-transform`;
+            iconEl.innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
+
+            // Update texts
+            badgeEl.innerText = badgeText;
+            badgeEl.className = `text-[10px] ${badgeColor} uppercase tracking-widest font-extrabold`;
+            titleEl.innerText = route.title.split(' (')[0]; // Remove parentheses part
+            descEl.innerText = route.desc;
+            stagesEl.innerText = `${route.stages} Etapes`;
+            distanceEl.innerText = `${route.stages * 25} km total`; // Rough estimate
+        }
+
+        function switchRoute(routeId) {
+            currentRouteId = routeId;
+            const route = routesData[routeId];
+
+            // Update route carousel card
+            updateRouteCarouselCard(routeId);
+           
+            document.getElementById('route-title').innerText = route.title;
+            document.getElementById('route-badge').innerText = route.badge;
+            document.getElementById('route-desc').innerText = route.desc;
+            document.getElementById('route-dist-trail').innerText = route.distTrail;
+            document.getElementById('route-dist-btt').innerText = route.distBtt;
+            document.getElementById('route-stages').innerText = `${route.stages} Etapes (${route.stages} Nits)`;
+           
+            document.getElementById('tech-endpoints').innerText = route.endpoints;
+            document.getElementById('tech-difficulty').innerText = route.difficulty;
+            document.getElementById('tech-terrain').innerText = route.terrain;
+            document.getElementById('tech-shoes').innerText = route.shoes;
+            document.getElementById('tech-tires').innerText = route.tires;
+
+            updateCarouselPreview(routeId);
+            renderRouteCardContent(routeId);
+            activeDayNum = 1;
+            setupDayTabs(routeId);
+            selectDay(1);
+           
+            // Sync budget inputs dropdown
+            const selectEl = document.getElementById('sim-route');
+            if (selectEl && selectEl.value !== routeId) {
+                selectEl.value = routeId;
+            }
+
+            // Sync Requirements Spinner wheel if not already synced
+            const idx = wheelRoutesOrder.indexOf(routeId);
+            if (idx !== -1 && idx !== activeWheelIndex) {
+                spinToRouteIndex(idx);
+            }
+
+            calculateBudget();
+            setTimeout(resizeCanvas, 50);
+        }
+
+        function updateCarouselPreview(routeId) {
+            const route = routesData[routeId];
+            if (!route) return;
+
+            const titleEl = document.getElementById('carousel-route-title');
+            const descEl = document.getElementById('carousel-route-desc');
+            const stagesEl = document.getElementById('carousel-route-stages');
+            const priceEl = document.getElementById('carousel-route-price');
+
+            if (titleEl) titleEl.innerText = route.title;
+            if (descEl) descEl.innerText = route.desc;
+            if (stagesEl) stagesEl.innerText = route.stages;
+            if (priceEl) priceEl.innerText = `${route.basePrice} €`;
+        }
+
+        // ACCOMMODATION SELECTION SYSTEM
+        function selectAccommodation(option) {
+            selectedAccommodationOption = option;
+            document.querySelectorAll('.acc-card').forEach(card => {
+                card.classList.remove('border-accentBlue');
+                card.classList.add('border-blue-200');
+            });
+            document.querySelectorAll('.acc-card div[id$="-dot"]').forEach(dot => {
+                dot.classList.remove('bg-accentBlue');
+                dot.classList.add('bg-transparent');
+            });
+           
+            const targetCard = document.getElementById(`acc-${option}`);
+            const targetDot = document.getElementById(`acc-${option}-dot`);
+            if (targetCard && targetDot) {
+                targetCard.classList.remove('border-blue-200');
+                targetCard.classList.add('border-accentBlue');
+                targetDot.classList.remove('bg-transparent');
+                targetDot.classList.add('bg-accentBlue');
+            }
+           
+            calculateBudget();
+        }
+
+        function toggleExtra(extraId) {
+            extrasState[extraId] = !extrasState[extraId];
+            const card = document.getElementById(`ext-${extraId}`);
+            const chk = document.getElementById(`chk-${extraId}`);
+           
+            if (extrasState[extraId]) {
+                card.classList.remove('border-blue-200');
+                card.classList.add('border-accentBlue');
+                chk.classList.remove('text-transparent', 'bg-slate-100');
+                chk.classList.add('text-white', 'bg-accentBlue');
+            } else {
+                card.classList.remove('border-accentBlue');
+                card.classList.add('border-blue-200');
+                chk.classList.remove('text-white', 'bg-accentBlue');
+                chk.classList.add('text-transparent', 'bg-slate-100');
+            }
+            calculateBudget();
+        }
+
+        // FINAL BILLING CALCULATOR FORMULA
+        function calculateBudget() {
+            const selectEl = document.getElementById('sim-route');
+            if (!selectEl) return;
+            const routeId = selectEl.value;
+            const route = routesData[routeId];
+            const nights = route.stages;
+           
+            let total = route.basePrice;
+           
+            let accPrice = 0;
+            if (selectedAccommodationOption === 'alberg') accPrice = 25 * nights;
+            if (selectedAccommodationOption === 'hotel') accPrice = 55 * nights;
+            total += accPrice;
+
+            const fisioPrice = extrasState.fisioterapia ? 45 * route.stages : 0;
+            const fotosPrice = extrasState.fotos ? 25 : 0;
+            const biciPrice = extrasState.bici ? 75 : 0;
+            const rafflePrice = document.getElementById('premium-ticket-chk').checked ? 10 : 0;
+
+            total += fisioPrice + fotosPrice + biciPrice + rafflePrice;
+
+            document.getElementById('invoice-base').innerText = route.basePrice + ' €';
+            document.getElementById('invoice-nights-desc').innerText = nights + ' nits';
+            document.getElementById('invoice-acc').innerText = accPrice + ' €';
+            document.getElementById('invoice-fisioterapia').innerText = fisioPrice + ' €';
+            document.getElementById('invoice-fotos').innerText = fotosPrice + ' €';
+            document.getElementById('invoice-bici').innerText = biciPrice + ' €';
+            document.getElementById('invoice-raffle').innerText = rafflePrice + ' €';
+            document.getElementById('invoice-total').innerText = total + ' €';
+           
+            document.getElementById('sim-nights-badge').innerText = nights + ' Nits';
+        }
+
+        function scrollToBudgetAndSelectRaffle() {
+            document.getElementById('calculadora').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('premium-ticket-chk').checked = true;
+            calculateBudget();
+        }
+
+        function openRegistrationModal() {
+            const selectEl = document.getElementById('sim-route');
+            const routeId = selectEl.value;
+            document.getElementById('modal-route-display').innerText = routesData[routeId].title;
+            document.getElementById('modal-price-display').innerText = document.getElementById('invoice-total').innerText;
+           
+            const modal = document.getElementById('register-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('register-modal').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function handleRegistrationSubmit(e) {
+            e.preventDefault();
+
+            const form = e.currentTarget;
+            const routeId = document.getElementById('sim-route')?.value || 'frances';
+            const routeTitle = routesData[routeId].title;
+            const totalPrice = document.getElementById('invoice-total').innerText;
+
+            document.getElementById('form-route-hidden').value = routeTitle;
+            document.getElementById('form-price-hidden').value = totalPrice;
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviant...';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(async response => {
+                const data = await response.json().catch(() => ({ ok: true }));
+                if (!response.ok || !data.ok) {
+                    throw new Error(data.message || 'Error al enviar la inscripció');
+                }
+                form.reset();
+                closeRegistrationModal();
+                showToast('Inscripció enviada correctament!');
+            })
+            .catch(error => {
+                console.error(error);
+                closeRegistrationModal();
+                showToast('No s\'ha pogut enviar. Revisau la configuració del correu del servidor.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Finalitzar i Pagar Reserva';
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
